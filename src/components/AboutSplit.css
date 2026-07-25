@@ -1,0 +1,77 @@
+/* ============================================================================
+   AboutSplit.css — styles for src/components/AboutSplit.jsx
+   Also used by: src/pages/Contact.jsx (.about-split__checklist)
+                 src/pages/ServiceDetail.jsx (.about-split, .about-split__checklist)
+   ============================================================================ */
+
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.about-split__images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.about-split__images img {
+  transition: transform 0.35s ease;
+}
+
+.about-split__images img:hover {
+  transform: scale(1.02);
+}
+
+.about-split__images img:first-child {
+  grid-column: 1 / -1;
+  border-radius: var(--radius-lg);
+  aspect-ratio: 16/9.5;
+  object-fit: cover;
+  width: 100%;
+}
+
+.about-split__images img:not(:first-child) {
+  border-radius: var(--radius-md);
+  aspect-ratio: 1;
+  object-fit: cover;
+  width: 100%;
+}
+
+.about-split__checklist {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 28px;
+}
+
+.about-split__checklist li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: var(--color-text-primary);
+  transition: transform 0.2s ease;
+}
+
+.about-split__checklist li:hover {
+  transform: translateX(4px);
+}
+
+.about-split__checklist li .anticon {
+  color: var(--color-primary);
+}
+
+@media (max-width: 900px) {
+  .about-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-split {
+    grid-template-columns: 1fr;
+  }
+}

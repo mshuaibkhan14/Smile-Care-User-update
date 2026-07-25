@@ -1,0 +1,96 @@
+/* ============================================================================
+   ServiceCard.css — styles for src/components/ServiceCard.jsx
+   Also used by: src/pages/Home.jsx, src/pages/Services.jsx (.services-grid)
+                 src/pages/ServiceDetail.jsx (.service-card__icon)
+   ============================================================================ */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-white);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-medium);
+}
+
+.service-card__image {
+  height: 180px;
+  overflow: hidden;
+}
+
+.service-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.service-card:hover .service-card__image img {
+  transform: scale(1.06);
+}
+
+.service-card__body {
+  padding: 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  transition: transform 0.25s ease;
+}
+
+.service-card:hover .service-card__icon {
+  transform: scale(1.08);
+}
+
+.service-card__body h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.service-card__body p {
+  font-size: 13.5px;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.service-card__link {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 13.5px;
+  transition: gap 0.2s ease;
+}
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
